@@ -1,5 +1,5 @@
 function drawDot(ctx, x, y, color, size) {
-  var c = Object.assign({r:255, g:255, b:255, a:0.01}, color || gc || {});
+  var c = Object.assign({r:255, g:255, b:255, a:0.01}, color || {});
   size = size || 5;
 
   // Select a fill style
@@ -11,54 +11,26 @@ function drawDot(ctx, x, y, color, size) {
   ctx.fill();
 }
 
-var gc;
 function getTouchPos(e) {
-  if (!e.touches) return false;
-  if (e.touches.length != 1) gc = randomColor();
-  // if (e.touches.length != 1) return false; // Too many fingers, can only deal with 1
-  var touch = e.touches[0]; // Get the information for finger #1
-  return {
-    x: touch.pageX - touch.target.offsetLeft,
-    y: touch.pageY - touch.target.offsetTop
-  };
+  return Array.from(e.touches).map(function(t) {
+    return {
+      x: t.pageX - t.target.offsetLeft,
+      y: t.pageY - t.target.offsetTop
+    };
+  });
 }
 
-function randomColor() {
-  return {
-    r: Math.floor(Math.random() * 256),
-    g: Math.floor(Math.random() * 256),
-    b: Math.floor(Math.random() * 256)
-  }
-}
-
-var lastX, lastY, lastSpeed;
-function touchStart(e) {
+function draw(e, ctx) {
   e.preventDefault();
-  var {x, y} = getTouchPos(e);
-  drawDot(ctx, x, y);
-  lastX = x;
-  lastY = y;
+  getTouchPos(e).map(function(pos) {
+    drawDot(ctx, pos.x, pos.y, {r:180, g:92, b:255}, 20);
+  })
 }
-
-function touchMove(e) {
-  e.preventDefault();
-  var {x, y} = getTouchPos(e);
-  var speed = (Math.abs(x-lastX)+Math.abs(y-lastY)) / 2;
-  drawDot(ctx, x, y, null, 1/speed*100);
-  lastX = x;
-  lastY = y;
-  lastSpeed = speed;
-}
-
 
 var canvas = document.getElementById('sketchpad');
-
-var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-canvas.setAttribute('width', w);
-canvas.setAttribute('height', h);
-
-canvas.addEventListener('touchstart', touchStart, false);
-canvas.addEventListener('touchmove', touchMove, false);
+canvas.setAttribute('width', Math.max(document.documentElement.clientWidth, window.innerWidth || 0));
+canvas.setAttribute('height', Math.max(document.documentElement.clientHeight, window.innerHeight || 0));
 
 var ctx = canvas.getContext('2d');
+canvas.addEventListener('touchstart', function(e) { draw(e, ctx); }, false);
+canvas.addEventListener('touchmove', function(e) { draw(e, ctx); }, false);
