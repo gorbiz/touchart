@@ -22,14 +22,20 @@ function getTouchPos(e) {
 
 function draw(e, ctx) {
   e.preventDefault();
+  var color = {r:0, g:0, b:25, a:.1};
+  var size = 10+Math.random()*30;
   getTouchPos(e).map(function(pos) {
-    drawDot(ctx, pos.x, pos.y, {r:180, g:92, b:255}, 20);
+    drawDot(ctx, pos.x, pos.y, color, size);
+    drawDot(ctx, dim-pos.x, pos.y, color, size);
   })
 }
 
 var canvas = document.getElementById('sketchpad');
-canvas.setAttribute('width', Math.max(document.documentElement.clientWidth, window.innerWidth || 0));
-canvas.setAttribute('height', Math.max(document.documentElement.clientHeight, window.innerHeight || 0));
+var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+var dim = Math.min(w, h);
+canvas.setAttribute('width', dim);
+canvas.setAttribute('height', dim);
 
 var ctx = canvas.getContext('2d');
 canvas.addEventListener('touchstart', function(e) { draw(e, ctx); }, false);
