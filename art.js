@@ -1,5 +1,5 @@
 function drawDot(ctx, x, y, color, size) {
-  var c = color || {r:255, g:255, b:255, a:0.01};
+  var c = Object.assign({r:255, g:255, b:255, a:0.01}, color || gc || {});
   size = size || 5;
 
   // Select a fill style
@@ -11,14 +11,24 @@ function drawDot(ctx, x, y, color, size) {
   ctx.fill();
 }
 
+var gc;
 function getTouchPos(e) {
   if (!e.touches) return false;
+  if (e.touches.length != 1) gc = randomColor();
   // if (e.touches.length != 1) return false; // Too many fingers, can only deal with 1
   var touch = e.touches[0]; // Get the information for finger #1
   return {
     x: touch.pageX - touch.target.offsetLeft,
     y: touch.pageY - touch.target.offsetTop
   };
+}
+
+function randomColor() {
+  return {
+    r: Math.floor(Math.random() * 256),
+    g: Math.floor(Math.random() * 256),
+    b: Math.floor(Math.random() * 256)
+  }
 }
 
 var lastX, lastY, lastSpeed;
@@ -34,7 +44,7 @@ function touchMove(e) {
   e.preventDefault();
   var {x, y} = getTouchPos(e);
   var speed = (Math.abs(x-lastX)+Math.abs(y-lastY)) / 2;
-  drawDot(ctx, x, y, null, Math.max(5,(1/speed)*20));
+  drawDot(ctx, x, y, null, 1/speed*100);
   lastX = x;
   lastY = y;
   lastSpeed = speed;
