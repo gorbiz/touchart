@@ -1,5 +1,5 @@
 function drawDot(ctx, x, y, color, size) {
-  var c = Object.assign({r:255, g:255, b:255, a:0.01}, color || {});
+  var c = Object.assign({r:255, g:255, b:255, a:.5}, color || {});
   size = size || 5;
 
   // Select a fill style
@@ -9,6 +9,14 @@ function drawDot(ctx, x, y, color, size) {
   ctx.arc(x, y, size, 0, Math.PI*2, true);
   ctx.closePath();
   ctx.fill();
+}
+
+function randomColor() {
+  return {
+    r: Math.floor(Math.random() * 256),
+    g: Math.floor(Math.random() * 256),
+    b: Math.floor(Math.random() * 256)
+  }
 }
 
 function getTouchPos(e) {
@@ -22,11 +30,17 @@ function getTouchPos(e) {
 
 function draw(e, ctx) {
   e.preventDefault();
-  var color = {r:0, g:0, b:25, a:.1};
-  var size = 10+Math.random()*30;
+  var color = randomColor();
+  var size = 1+Math.random()*89;
   getTouchPos(e).map(function(pos) {
-    drawDot(ctx, pos.x, pos.y, color, size);
-    drawDot(ctx, dim-pos.x, pos.y, color, size);
+    drawDot(ctx, pos.x,     pos.y,     color, size);
+    drawDot(ctx, pos.y,     pos.x,     color, size);
+    drawDot(ctx, dim-pos.x, pos.y,     color, size);
+    drawDot(ctx, dim-pos.y, pos.x,     color, size);
+    drawDot(ctx, pos.x,     dim-pos.y, color, size);
+    drawDot(ctx, pos.y,     dim-pos.x, color, size);
+    drawDot(ctx, dim-pos.x, dim-pos.y, color, size);
+    drawDot(ctx, dim-pos.y, dim-pos.x, color, size);
   })
 }
 
