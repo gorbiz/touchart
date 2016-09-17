@@ -3,7 +3,7 @@
 
 
 ## Try it!
-
+Here are a few experiments (some are better with multi-touch):
  - [kaleidoscope](http://gorbiz.com/gorbiz/touchart/commit/af143d905381e037bc89e88c1038028459b6482c)
  - [Rorschach edition](http://gorbiz.com/gorbiz/touchart/commit/b751df48f173405b278e0290e810e59ab41eab0c)
  - [change color with second finger](http://gorbiz.com/gorbiz/touchart/commit/c4dd0995213a18a9dffc029906537d308988bb5a)
