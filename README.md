@@ -4,6 +4,7 @@
 
 ## Try it!
 Here are a few experiments (some are better with multi-touch):
+ - [kaleidoscope 2](http://gorbiz.com/gorbiz/touchart/commit/0e186f1c40a20aeac0de1b98e259096ab6edb725)
  - [kaleidoscope](http://gorbiz.com/gorbiz/touchart/commit/af143d905381e037bc89e88c1038028459b6482c)
  - [Rorschach edition](http://gorbiz.com/gorbiz/touchart/commit/b751df48f173405b278e0290e810e59ab41eab0c)
  - [change color with second finger](http://gorbiz.com/gorbiz/touchart/commit/c4dd0995213a18a9dffc029906537d308988bb5a)
@@ -13,6 +14,9 @@ Here are a few experiments (some are better with multi-touch):
 
 
 ## Sample drawings
+
+<img src="https://cloud.githubusercontent.com/assets/207850/18611795/4038ff86-7d46-11e6-9031-13ed9cc50b78.png" width="870" />  
+Using: *kaleidoscope 2*
 
 <img src="https://cloud.githubusercontent.com/assets/207850/18611512/785f0f28-7d3b-11e6-9362-7ffbd478fe1a.png" width="870" />  
 Using: *kaleidoscope*
