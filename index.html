@@ -11,16 +11,19 @@
       body {
         background: #111;
         overflow: hidden;
-        text-align: center;
       }
       #sketchpad {
-        background: #111;
+        background: #333;
         box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.25)
       }
+      #sketchpad svg {
+        background: #222;
+      }
     </style>
+    <script src="raphael.min.js" charset="utf-8"></script>
   </head>
   <body>
-    <canvas id="sketchpad" width="790" height="500"></canvas>
+    <div id="sketchpad"></div>
     <script src="art.js"></script>
   </body>
 </html>
