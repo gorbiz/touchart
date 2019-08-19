@@ -4,12 +4,13 @@
 
 ## Try it!
 Here are a few experiments (some are better with multi-touch):
- - [kaleidoscope 2](http://gorbiz.com/gorbiz/touchart/commit/0e186f1c40a20aeac0de1b98e259096ab6edb725)
- - [kaleidoscope](http://gorbiz.com/gorbiz/touchart/commit/af143d905381e037bc89e88c1038028459b6482c)
- - [Rorschach edition](http://gorbiz.com/gorbiz/touchart/commit/b751df48f173405b278e0290e810e59ab41eab0c)
- - [change color with second finger](http://gorbiz.com/gorbiz/touchart/commit/c4dd0995213a18a9dffc029906537d308988bb5a)
- - [multi-touch!](http://gorbiz.com/gorbiz/touchart/commit/4a1b96ffdc229b7a19b90766536c1111424c65e9)
- - [interesting first hack, 1 finger, size = speed inversed](http://gorbiz.com/gorbiz/touchart/commit/b0baba2bf5447548816f25f3051665903c863c8b)
+/index.html
+ - [kaleidoscope 2](https://raw.githack.com/gorbiz/touchart/0e186f1c40a20aeac0de1b98e259096ab6edb725/index.html)
+ - [kaleidoscope](https://raw.githack.com/gorbiz/touchart/af143d905381e037bc89e88c1038028459b6482c/index.html)
+ - [Rorschach edition](https://raw.githack.com/gorbiz/touchart/b751df48f173405b278e0290e810e59ab41eab0c/index.html)
+ - [change color with second finger](https://raw.githack.com/gorbiz/touchart/c4dd0995213a18a9dffc029906537d308988bb5a/index.html)
+ - [multi-touch!](https://raw.githack.com/gorbiz/touchart/4a1b96ffdc229b7a19b90766536c1111424c65e9/index.html)
+ - [interesting first hack, 1 finger, size = speed inversed](https://raw.githack.com/gorbiz/touchart/b0baba2bf5447548816f25f3051665903c863c8b/index.html)
 
 
 
